@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-const quotes = [
+let quotes = [
   {
     quote:"Don't Aspire To Make A Living , Aspire To Make A Difference",
     source: "Denzel Washington",
@@ -30,7 +30,7 @@ const quotes = [
   {
     quote:"If an egg is broken by an outside force life ends . if broken by an inside force life begins , great things always begin on the inside.",
     source: "Jim Kwik",
-    Citation: "Anonymous",
+    tags:["Grind","Mentality"],
     year: 2018
   },
   {
@@ -43,12 +43,13 @@ const quotes = [
     quote:"Have More Than You Show, Speak Less Than You Know",
     source: "William Shakespear",
     Citation: "King Lear",
+    tags:["Grind","Mentality"],
     year: 1606
   },
   {
-    quote:"The Tree That Would Grow To Heave, Must Send Its Roots To Hell",
+    quote:"The Tree That Would Grow To Heaven, Must Send Its Roots To Hell",
     source: "Carl Jung",
-    Citation: "chapter 5 of a book by Jung",
+    // Citation: "chapter 5 of a book by Jung",
     year: 1951
   }
 ];
@@ -57,13 +58,49 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
-
-
+function getRandomQuote(){
+  // let random = Math.floor(Math.random() * (quotes.length - 1)) + quotes[0];
+  let random = Math.floor(Math.random() * quotes.length);
+  return quotes[random];
+}
 
 /***
  * `printQuote` function
 ***/
 
+
+function printQuote(){
+   let myQuote = getRandomQuote();
+   
+   let content = `<p class="quotes">"${myQuote.quote}"</p>
+                    <p class="source">${myQuote.source}`
+
+  if (Object.keys(myQuote).includes("Citation")){
+   
+   content += `<span class="citation">${myQuote.Citation}</span>`; 
+      console.log(content);
+  } 
+  if(Object.keys(myQuote).includes("year")) {
+     content  +=   `<span class="year">${myQuote.year}</span>`;
+      console.log(content);
+  }
+  const tagList = document.getElementById('tagList');
+  const tagContainer = document.getElementById('tagContainer');
+  //check tags
+  if (!myQuote.tags){
+    tagList.innerHTML = '';
+    tagContainer.style.display = 'none';
+  } else {
+    tagList.innerHTML = '';
+    tagContainer.style.display = 'inline-block';
+    myQuote.tags.forEach(tag => {
+      let li = document.createElement('li');
+      li.textContent = `#${tag}`;
+      tagList.appendChild(li);
+    })
+  }
+  document.getElementById('quote-box').innerHTML = content;
+}
 
 
 /***

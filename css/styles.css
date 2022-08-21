@@ -51,9 +51,10 @@ h1 {
 .container {
   width: 90%;
   max-width: 1024px;
-  margin: auto;
+  margin: 0 auto;
   padding: 5px;
 }
+
 
 .quote-box {
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
@@ -113,6 +114,15 @@ h1 {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+.tag-container{
+  display: none;
+}
+.tag-list{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 
 @media (min-width: 768px) {

@@ -28,7 +28,7 @@ let quotes = [
     year: 2021
   },
   {
-    quote:"If an egg is broken by an outside force life ends . if broken by an inside force life begins , great things always begin on the inside.",
+    quote:"if an egg broken by an inside force life begins , great things always begin on the inside.",
     source: "Jim Kwik",
     tags:["Grind","Mentality"],
     year: 2018
@@ -72,6 +72,7 @@ function getRandomQuote(){
 function printQuote(){
    let myQuote = getRandomQuote();
    
+
    let content = `<p class="quotes">"${myQuote.quote}"</p>
                     <p class="source">${myQuote.source}`
 
@@ -107,5 +108,11 @@ function printQuote(){
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
+let btn = document.getElementById('load-quote');
+let autoPlay;
+btn.addEventListener('click', () => {
+  
+  autoPlay = setInterval(printQuote,7000);
 
+})
 document.getElementById('load-quote').addEventListener("click", printQuote, false);

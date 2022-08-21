@@ -79,14 +79,15 @@ function printQuote(){
   if (Object.keys(myQuote).includes("Citation")){
    
    content += `<span class="citation">${myQuote.Citation}</span>`; 
-      console.log(content);
+      // console.log(content);
   } 
   if(Object.keys(myQuote).includes("year")) {
      content  +=   `<span class="year">${myQuote.year}</span>`;
-      console.log(content);
+      // console.log(content);
   }
   const tagList = document.getElementById('tagList');
   const tagContainer = document.getElementById('tagContainer');
+
   //check tags
   if (!myQuote.tags){
     tagList.innerHTML = '';
@@ -114,5 +115,5 @@ btn.addEventListener('click', () => {
   
   autoPlay = setInterval(printQuote,7000);
 
-})
+});
 document.getElementById('load-quote').addEventListener("click", printQuote, false);

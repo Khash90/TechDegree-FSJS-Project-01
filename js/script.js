@@ -101,6 +101,8 @@ function printQuote(){
       tagList.appendChild(li);
     })
   }
+
+  //creating random bg color
   const changeColor = () =>  {
    document.body.style.backgroundColor = 
    'rgb(' + Math.round(Math.random() * 255) +
@@ -109,6 +111,7 @@ function printQuote(){
   }
   document.body.style.backgroundColor = changeColor();
   
+  //adding content in html
   document.getElementById('quote-box').innerHTML = content;
 }
 
@@ -117,7 +120,7 @@ function printQuote(){
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
+//setting interval
 setInterval(printQuote,8000);
-
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);

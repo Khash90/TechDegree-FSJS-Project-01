@@ -118,6 +118,8 @@ h1 {
 .tag-container{
   display: none;
 }
+
+
 .tag-list{
   list-style: none;
   display: flex;

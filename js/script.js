@@ -73,15 +73,15 @@ function printQuote(){
    let myQuote = getRandomQuote();
    
 
-   let content = `<p class="quotes">"${myQuote.quote}"</p>
+   let content = `<p class="quote">"${myQuote.quote}"</p>
                     <p class="source">${myQuote.source}`
 
-  if (Object.keys(myQuote).includes("Citation")){
+  if (myQuote.Citation){
    
    content += `<span class="citation">${myQuote.Citation}</span>`; 
       // console.log(content);
   } 
-  if(Object.keys(myQuote).includes("year")) {
+  if(myQuote.year) {
      content  +=   `<span class="year">${myQuote.year}</span>`;
       // console.log(content);
   }
@@ -101,6 +101,14 @@ function printQuote(){
       tagList.appendChild(li);
     })
   }
+  const changeColor = () =>  {
+   document.body.style.backgroundColor = 
+   'rgb(' + Math.round(Math.random() * 255) +
+   ','+ Math.round(Math.random() * 255) +
+   ','+ Math.round(Math.random() * 255) +')';
+  }
+  document.body.style.backgroundColor = changeColor();
+  
   document.getElementById('quote-box').innerHTML = content;
 }
 
@@ -109,11 +117,7 @@ function printQuote(){
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-let btn = document.getElementById('load-quote');
-let autoPlay;
-btn.addEventListener('click', () => {
-  
-  autoPlay = setInterval(printQuote,7000);
+setInterval(printQuote,8000);
 
-});
+
 document.getElementById('load-quote').addEventListener("click", printQuote, false);

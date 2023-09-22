@@ -10,7 +10,7 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
   {
-    quote:"Don't Aspire To Make A Living , Aspire To Make A Difference",
+    quote:"Don't Aspire To Make A Living, Aspire To Make A Difference",
     source: "Denzel Washington",
     Citation: "Speech At Dillard University",
     year: 2016
@@ -28,7 +28,7 @@ let quotes = [
     year: 2021
   },
   {
-    quote:"if an egg broken by an inside force life begins , great things always begin on the inside.",
+    quote:"if an egg broken by an inside force life begins, great things always begin on the inside.",
     source: "Jim Kwik",
     tags:["Grind","Mentality"],
     year: 2018
